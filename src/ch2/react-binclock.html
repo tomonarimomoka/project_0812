@@ -9,6 +9,7 @@
             body{
                 font-size: 32px;
                 text-align: center;
+                color: #f77da4;
             }
         </style>
     </head>
@@ -31,8 +32,9 @@
                     const v = parseInt(binStr.substr(i,1))
                     const bin = "0000" + v.toString(2)
                     const bin8 = bin.substr(bin.length - 4 , 4)
-
-                    for(let j = 0 ; j < bin8.length; j++){                        
+                    //何時かわからないので、数字を書いてみる
+                    lines.push(v + " ")           
+                    for(let j = 0 ; j < bin8.length; j++){     
                         if(bin8.substr(j,1) === '0'){
                             lines.push(<span style={style0}>〇</span>)
                         }else{
