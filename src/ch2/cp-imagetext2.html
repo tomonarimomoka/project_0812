@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+        <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            class PhotoText extends React.Component{
+                getImageURL(){
+                    const id = this.props.image
+                    const url = "img/" + id + ".png"
+                    return url;
+                }
+
+                render(){
+                    const label = this.props.label
+                    const url = this.getImageURL()
+                    const boxStyle = {
+                        border: "1px solod silver",
+                        margin: "8px",
+                        padding: "4px",
+                        
+                        backgroundColor: "pink"
+                    }
+                    return (<div style={boxStyle}>
+                                <img src={url} width="128"/>
+                                <span>{label}</span>
+                            </div>
+                    )
+                }
+            }
+            const dom = <div>
+                    <PhotoText image="pic1" label="先生大好き💗" />
+                    <PhotoText image="pic2" label="かわい私が好き🎀" />
+                    <PhotoText image="pic3" label="私の自信作★" />
+                </div>
+
+            ReactDOM.render(dom,document.getElementById('root'))
+        </script>
+    </body>   
+</html>
